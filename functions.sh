@@ -130,7 +130,7 @@ else
      exit
 fi
 }
-
+#Select distro
 distro() {
 printf "\n"
 printf "\e[4mDistros\n\n\e[0m"
@@ -145,7 +145,7 @@ elif [ "$distro" = "3" ]; then
    home   
 fi
 }   
-
+#Debian versions
 debian () {
 printf "\n"
 printf "\e[4mDebian Releases\n\n\e[0m"
@@ -170,7 +170,7 @@ elif [ "$debianver" = "4" ]; then
 
 fi  
 }   
-
+#Ubuntu versions
 ubuntu () {
 printf "\n"
 printf "\e[4mUbuntu Releases\n\n\e[0m"
