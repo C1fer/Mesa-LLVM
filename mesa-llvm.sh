@@ -13,7 +13,6 @@ if [ $choice -eq 1 ]; then
 elif [ $choice -eq 2 ]; then
    mesa_update
 elif [ $choice -eq 3 ]; then
-    exit
+   rm -rf /tmp/mesa-llvm
+   exit
 fi    
-
-sudo rm -rf /tmp/mesa-llvm
