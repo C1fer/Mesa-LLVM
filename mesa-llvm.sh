@@ -1,4 +1,5 @@
 #!/bin/bash
+wget -q https://raw.githubusercontent.com/Cifer025/Mesa-LLVM/master/functions.sh
 source ./functions.sh
 printf "A very basic mesa script\n\n"
 printf "Choose an option\n\n"
