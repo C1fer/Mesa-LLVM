@@ -8,7 +8,7 @@ script, but you can download and run it using `./mesa-llvm.sh` on the folder whe
 
 
 # Speed up compilation
-You can use ccache for compiling much faster than if you were using gcc or g++. In order to setup ccache, run ccache.sh or type the following commands on terminal:
+You can use ccache to make the compilation go much faster. In order to setup ccache, type the following commands on a terminal window:
 ```
 sudo apt install -y ccache
 echo 'export PATH="/usr/lib/ccache:$PATH"' | sudo tee -a ~/.bashrc
