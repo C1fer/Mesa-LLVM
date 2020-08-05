@@ -61,7 +61,7 @@ meson setup build \
 meson configure build/
 ninja -C build/
 sudo ninja -C build/ install
-#
+#Reboot or exit
 printf "Installation finished. Do you want to reboot your pc? [Y]/[N]"
 read choice
 if [ "$choice" = "Y" ]; then
@@ -122,6 +122,7 @@ meson setup build \
 meson configure build/
 ninja -C build/
 sudo ninja -C build/ install
+#Reboot or exit
 printf "Update finished. Do you want to reboot your pc [Y]\[N]?"
 read choice
 if [ "$choice" = "Y" ]; then
