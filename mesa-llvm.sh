@@ -1,5 +1,5 @@
 #!/bin/bash
-mkdir /temp/mesa-llvm && cd mesa-llvm
+mkdir /tmp/mesa-llvm && cd mesa-llvm
 printf "\n"
 printf "A very basic mesa script\n\n"
 wget -q https://raw.githubusercontent.com/Cifer025/Mesa-LLVM/master/functions.sh
