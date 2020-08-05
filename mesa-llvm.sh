@@ -1,5 +1,10 @@
 #!/bin/bash
 #Prepare installer
+if [ -d "/tmp/mesa-llvm" ]; then
+ rm -rf /tmp/mesa-llvm
+else 
+   :
+fi
 cd /tmp && mkdir mesa-llvm
 cd mesa-llvm
 wget -q https://raw.githubusercontent.com/Cifer025/Mesa-LLVM/master/functions.sh
