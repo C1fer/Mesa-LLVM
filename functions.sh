@@ -65,10 +65,12 @@ sudo ninja -C build/ install
 printf "Installation finished. Do you want to reboot your pc? [Y]/[N]"
 read choice
 if [ "$choice" = "Y" ]; then
-rm -rf /tmp/mesa-llvm
-reboot 
-else rm -rf /tmp/mesa-llvm
-exit
+  rm -rf /tmp/mesa-llvm
+  reboot 
+else 
+     rm -rf /tmp/mesa-llvm
+     exit
+fi
 }
 
 mesa_update () {
@@ -123,10 +125,12 @@ sudo ninja -C build/ install
 printf "Update finished. Do you want to reboot your pc [Y]\[N]?"
 read choice
 if [ "$choice" = "Y" ]; then
-rm -rf /tmp/mesa
-reboot 
-else rm -rf /tmp/mesa
-exit
+  rm -rf /tmp/mesa-llvm
+  reboot 
+else 
+     rm -rf /tmp/mesa-llvm
+     exit
+fi
 }
 
 
