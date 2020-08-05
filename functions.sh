@@ -61,6 +61,14 @@ meson setup build \
 meson configure build/
 ninja -C build/
 sudo ninja -C build/ install
+#
+printf "Installation finished. Do you want to reboot your pc? [Y]/[N]"
+read choice
+if [ "$choice" = "Y" ]; then
+rm -rf /tmp/mesa-llvm
+reboot 
+else rm -rf /tmp/mesa-llvm
+exit
 }
 
 mesa_update () {
@@ -112,6 +120,13 @@ meson setup build \
 meson configure build/
 ninja -C build/
 sudo ninja -C build/ install
+printf "Update finished. Do you want to reboot your pc [Y]\[N]?"
+read choice
+if [ "$choice" = "Y" ]; then
+rm -rf /tmp/mesa
+reboot 
+else rm -rf /tmp/mesa
+exit
 }
 
 
