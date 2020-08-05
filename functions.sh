@@ -112,7 +112,6 @@ meson setup build \
 meson configure build/
 ninja -C build/
 sudo ninja -C build/ install
-cd ~
 }
 
 
