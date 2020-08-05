@@ -132,4 +132,16 @@ else
 fi
 }
 
+ubuntu () {
+printf "Please select your Ubuntu version\n"
+printf "1) Xenial (16.04)\n2) Bionic (18.04)\n3) Disco%2s(19.04)\n4) Eoan%3s(19.10)\n5) Focal%2s(20.04)\n"  
+read ubuntuver
+if [ "$ubuntuver" = "1" ]; then
+   echo "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial main" | sudo tee -a /etc/apt/sources.list
+   echo "deb-src http://apt.llvm.org/xenial/ llvm-toolchain-xenial main" | sudo tee -a /etc/apt/sources.list
+   mesa_install
+fi
+}
+
+
 
