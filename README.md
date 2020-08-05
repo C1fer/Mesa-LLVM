@@ -2,7 +2,7 @@
 Script for installing Mesa-git and LLVM-git on Ubuntu and Debian based distros.
 
 # Running the script
-I recommend using `curl -s https://raw.githubusercontent.com/Cifer025/Mesa-LLVM/master/mesa-llvm.sh| bash` since it will always use the latest version of the
+I recommend using `bash <(curl -s https://raw.githubusercontent.com/Cifer025/Mesa-LLVM/master/mesa-llvm.sh)` since it will always use the latest version of the
 script, but you can download and run it using `./mesa-llvm.sh` on the folder where the file is located.
 
 
@@ -14,3 +14,4 @@ sudo apt install -y ccache
 echo 'export PATH="/usr/lib/ccache:$PATH"' | sudo tee -a ~/.bashrc
 sudo /usr/sbin/update-ccache-symlinks
 ```
+
