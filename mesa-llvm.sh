@@ -1,4 +1,5 @@
 #!/bin/bash
+input() {
 wget -q https://raw.githubusercontent.com/Cifer025/Mesa-LLVM/master/functions.sh
 source ./functions.sh
 printf "A very basic mesa script\n\n"
@@ -12,6 +13,7 @@ elif [ $choice -eq 2 ]; then
 elif [ $choice -eq 3 ]; then
     exit
 fi    
- 
+}
+input
 
 
