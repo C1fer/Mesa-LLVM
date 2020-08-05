@@ -2,8 +2,8 @@
 input() {
 wget -q https://raw.githubusercontent.com/Cifer025/Mesa-LLVM/master/functions.sh
 source ./functions.sh
-printf "A very basic mesa script\n\n"
-printf "Choose an option\n\n"
+printf "A very basic mesa script\n"
+printf "Choose an option\n"
 printf "1)Install\n2)Update\n3)Exit\nOptions:"
 read choice 
 if [ $choice -eq 1 ]; then 
