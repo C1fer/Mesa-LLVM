@@ -7,13 +7,15 @@ wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add -
 # Fingerprint: 6084 F3CF 814B 57C1 CF12 EFD5 15CF 4D18 AF4F 7421 
 sudo apt update
 sudo apt-get install -y mesa-utils meson build-essential git libvdpau-dev libxxf86vm-dev libxdamage-dev libxshmfence-dev libelf-dev libomxil-bellagio-dev libunwind-dev libglvnd-dev lm-sensors libclc-dev glslang-dev glslang-tools libva-dev vulkan-utils libpciaccess-dev wayland-protocols libwayland-egl-backend-dev libxcb-glx0-dev libx11-xcb-dev libxcb-dri2-0-dev libxcb-dri3-dev libxcb-present-dev libsensors-dev zstd  && sudo apt-get -y build-dep mesa
-cd ~
+#Build & install libdrm
 wget https://dri.freedesktop.org/libdrm/libdrm-2.4.102.tar.xz
 tar -xf libdrm-2.4.102.tar.xz && cd libdrm-2.4.102
 meson build/ && cd build
 ninja && sudo ninja install
+#Install llvm
 sudo apt-get install -y libllvm-12-ocaml-dev libllvm12 llvm-12 llvm-12-dev llvm-12-doc llvm-12-examples llvm-12-runtime clang-12 clang-tools-12 clang-12-doc libclang-common-12-dev libclang-12-dev libclang1-12 clang-format-12 clangd-12
-cd ~ 
+#Build & install mesa-git
+cd /tmp/mesa-llvm
 git clone https://gitlab.freedesktop.org/mesa/mesa.git && cd mesa
 touch custom-llvm.ini
 echo "[binaries]" | sudo tee -a custom-llvm.ini
@@ -59,13 +61,12 @@ meson setup build \
 meson configure build/
 ninja -C build/
 sudo ninja -C build/ install
-cd ~
-sudo rm -rf mesa libdrm-2.4.102 && sudo rm -f libdrm-2.4.102.tar.xz 
 }
 
 mesa_update () {
+#Search for llvm updates
 sudo apt-get install -y libllvm-12-ocaml-dev libllvm12 llvm-12 llvm-12-dev llvm-12-doc llvm-12-examples llvm-12-runtime clang-12 clang-tools-12 clang-12-doc libclang-common-12-dev libclang-12-dev libclang1-12 clang-format-12 clangd-12
-cd ~ 
+#Update mesa
 git clone https://gitlab.freedesktop.org/mesa/mesa.git && cd mesa
 touch custom-llvm.ini
 echo "[binaries]" | sudo tee -a custom-llvm.ini
@@ -112,7 +113,6 @@ meson configure build/
 ninja -C build/
 sudo ninja -C build/ install
 cd ~
-sudo rm -rf mesa
 }
 
 
