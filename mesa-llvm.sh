@@ -1,11 +1,10 @@
 #!/bin/bash
-input() {
 wget -q https://raw.githubusercontent.com/Cifer025/Mesa-LLVM/master/functions.sh
 source ./functions.sh
-printf "A very basic mesa script\n"
-printf "Choose an option\n"
-printf "1)Install\n2)Update\n3)Exit\nOptions:"
-read choice 
+printf "A very basic mesa script\n\n"
+printf "\e[4mOptions\n\n"
+printf "1)Install\n2)Update\n3)Exit\n"
+read -p "Select the option: "  choice
 if [ $choice -eq 1 ]; then 
     mesa_install
 elif [ $choice -eq 2 ]; then
@@ -13,7 +12,3 @@ elif [ $choice -eq 2 ]; then
 elif [ $choice -eq 3 ]; then
     exit
 fi    
-}
-input
-
-
