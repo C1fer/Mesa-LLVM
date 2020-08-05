@@ -130,6 +130,7 @@ else
      exit
 fi
 }
+
 #Select distro
 distro() {
 printf "\n"
@@ -145,6 +146,7 @@ elif [ "$distro" = "3" ]; then
    home   
 fi
 }   
+
 #Debian versions
 debian () {
 printf "\n"
@@ -169,7 +171,8 @@ elif [ "$debianver" = "4" ]; then
   distro 
 
 fi  
-}   
+}  
+
 #Ubuntu versions
 ubuntu () {
 printf "\n"
