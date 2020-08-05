@@ -1,4 +1,6 @@
 #!/bin/bash
+mkdir /temp/mesa-llvm && cd mesa-llvm
+printf "\n"
 printf "A very basic mesa script\n\n"
 wget -q https://raw.githubusercontent.com/Cifer025/Mesa-LLVM/master/functions.sh
 source ./functions.sh
@@ -12,3 +14,5 @@ elif [ $choice -eq 2 ]; then
 elif [ $choice -eq 3 ]; then
     exit
 fi    
+
+sudo rm -rf /tmp/mesa-llvm
