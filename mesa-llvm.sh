@@ -10,11 +10,11 @@ printf "\nA very basic mesa + llvm installer\n\n"
 printf "\e[4mOptions\n\n\e[0m"
 printf "1) Install\n2) Update\n3) Exit\n\n"
 read -p "Select an option: "  choice
-if [ $choice -eq 1 ]; then 
+if [ "$choice" = 1 ]; then 
    distro
-elif [ $choice -eq 2 ]; then
+elif [ "$choice" = "2" ]; then
    mesa_update
-elif [ $choice -eq 3 ]; then
+elif [ "$choice" = "3" ]; then
    rm -rf /tmp/mesa-llvm
    printf "Exiting...\n"
    exit
