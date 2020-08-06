@@ -13,7 +13,7 @@ I recommend using `bash <(curl -s https://raw.githubusercontent.com/C1fer/Mesa-L
 
 
 # Speed up compilation
-You can use ccache to make the compilation go much faster. In order to setup ccache, type the following commands on a terminal window:
+You can use ccache to make the compilation go much faster. In order to setup ccache, you need to type these commands on a teminal window and then log out.
 ```
 sudo apt install -y ccache
 echo 'export PATH="/usr/lib/ccache:$PATH"' | sudo tee -a ~/.bashrc
