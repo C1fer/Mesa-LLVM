@@ -206,11 +206,16 @@ elif [ "$ubuntuver" = "6" ]; then
 fi
 } 
 
+#Check if llvm repository exists on /etc/apt/sources.list
 check_repo () {
 if grep "apt.llvm.org" /etc/apt/sources.list; then
- printf "\e[1;33mLLVM repository already exists. Please enter your password to remove it.\e[0m\n"
+ printf "\e[1;33mLLVM repository is already added to software sources. Please enter your password to remove it.\e[0m\n"
  sudo sed -in "/apt.llvm.org/d" /etc/apt/sources.list
 else
  :
 fi
 }
+
+
+
+
