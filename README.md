@@ -8,7 +8,7 @@ DON'T use mesa PPAs (oibaf, kisak, padoka, etc.) nor update from the update mana
 
 
 # Running the script
-I recommend using `bash <(curl -s https://raw.githubusercontent.com/C1fer/Mesa-LLVM/master/mesa-llvm.sh)` since it will always use the latest version of, but you can download and run it using `./mesa-llvm.sh`.
+I recommend using `bash <(curl -s https://raw.githubusercontent.com/C1fer/Mesa-LLVM/master/mesa-llvm.sh)`. That way you'll always use the latest version, but you can download it and run it using `./mesa-llvm.sh` if you want.
 
 
 
