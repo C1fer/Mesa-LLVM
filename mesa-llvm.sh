@@ -11,7 +11,7 @@ wget -q https://raw.githubusercontent.com/Cifer025/Mesa-LLVM/master/functions.sh
 source ./functions.sh
 #Start screen
 home () {
-printf "\nA very basic mesa + llvm installer\n\n"
+printf "\nA very simple mesa + llvm installer\n\n"
 printf "\e[1;4mOptions\n\n\e[0m"
 printf "1) Install\n2) Update\n3) Exit\n\n"
 read -p "Select an option: "  choice
