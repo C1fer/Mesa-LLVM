@@ -12,7 +12,7 @@ source ./functions.sh
 #Start screen
 home () {
 printf "\nA very basic mesa + llvm installer\n\n"
-printf "\e[4mOptions\n\n\e[0m"
+printf "\e[1;4mOptions\n\n\e[0m"
 printf "1) Install\n2) Update\n3) Exit\n\n"
 read -p "Select an option: "  choice
 if [ "$choice" = 1 ]; then 
