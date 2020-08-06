@@ -16,6 +16,7 @@ printf "\e[1;4mOptions\n\n\e[0m"
 printf "1) Install\n2) Update\n3) Exit\n\n"
 read -p "Select an option: "  choice
 if [ "$choice" = 1 ]; then 
+   check_repo
    distro
 elif [ "$choice" = "2" ]; then
    mesa_update
