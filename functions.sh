@@ -208,6 +208,7 @@ fi
 
 check_repo () {
 if grep "apt.llvm.org" /etc/apt/sources.list; then
+ printf "\e[1;33mLLVM repository already exists. Please enter your password to remove it.\e[0m\n"
  sudo sed -in "/apt.llvm.org/d" /etc/apt/sources.list
 else
  :
