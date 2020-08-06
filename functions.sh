@@ -206,3 +206,11 @@ elif [ "$ubuntuver" = "6" ]; then
     
 fi
 } 
+
+check_repo () {
+if grep "apt.llvm.org" /etc/apt/sources.list; then
+ sudo sed -in "/apt.llvm.org/d" /etc/apt/sources.list
+else
+ :
+fi
+}
