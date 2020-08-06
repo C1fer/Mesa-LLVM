@@ -134,8 +134,9 @@ fi
 #Select distro
 distro() {
 printf "\n"
+printf "A very simple mesa + llvm installer\n\n"
 printf "\e[1;4mDistros\n\n\e[0m"
-printf "1) Debian (Deepin, Kali, Mint DE, etc.)\n2) Ubuntu (elementary OS, Mint, Pop\!_OS, etc.)\n3) Go back\n\n"
+printf "1) Debian (Deepin, Kali, Mint DE, etc.)\n2) Ubuntu (elementary OS, Mint, Pop!_OS, etc.)\n3) Go back\n\n"
 read -p "Select an option: " distro
 if [ "$distro" = "1" ]; then
    debian
@@ -167,7 +168,6 @@ elif [ "$debianver" = "3" ]; then
   mesa_install
 elif [ "$debianver" = "4" ]; then
   clear
-  printf "\nA very basic mesa + llvm installer\n\n"
   distro 
 
 fi  
@@ -201,7 +201,6 @@ elif [ "$ubuntuver" = "5" ]; then
     mesa_install   
 elif [ "$ubuntuver" = "6" ]; then
      clear
-     printf "\nA very basic mesa + llvm installer\n\n"
      distro
     
 fi
