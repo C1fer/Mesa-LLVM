@@ -2,18 +2,15 @@
 Script for installing Mesa-git and LLVM-git on Ubuntu and Debian based distros.
 
 # ATTENTION
-DON'T use mesa PPAs (oibaf, kisak, padoka, etc.) nor update from the update manager if you want to use this installer. This will roll you back to llvm-stable
+DON'T use mesa ppas (Oibaf, Kisak, Padoka, etc.) nor update from the update manager if you want to use this installer. Updating from another source aside from this will roll you back to llvm-stable.
 
+# Usage
+In order for the script to work, you need to enable source code repositories and unstable packages on your distro's software sources manager. Note that if you've added a ppa before these options should be enabled. 
 
-
-
-# Running the script
-I recommend using `bash <(curl -s https://raw.githubusercontent.com/C1fer/Mesa-LLVM/master/mesa-llvm.sh)`. That way you'll always use the latest version, but you can download it and run it using `./mesa-llvm.sh` if you want.
-
-
+I recommend using `bash <(curl -s https://raw.githubusercontent.com/C1fer/Mesa-LLVM/master/mesa-llvm.sh)` for running the script. With that you will always use the latest version, but you can download it and run it using `./mesa-llvm.sh` if you want.
 
 # Speed up compilation
-You can use ccache to make the compilation go much faster. In order to setup ccache, you need to type these commands on a teminal window and then log out.
+You can use ccache to make the compilation go much faster. In order to set up ccache, type these commands on a teminal window and then log out.
 ```
 sudo apt install -y ccache
 echo 'export PATH="/usr/lib/ccache:$PATH"' | sudo tee -a ~/.bashrc
