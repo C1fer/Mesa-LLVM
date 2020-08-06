@@ -1,4 +1,5 @@
 #!/bin/bash
+#Full mesa installation
 mesa_install () {
 wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add -
 # Fingerprint: 6084 F3CF 814B 57C1 CF12 EFD5 15CF 4D18 AF4F 7421 
@@ -70,6 +71,7 @@ else
 fi
 }
 
+#Mesa + llvm update
 mesa_update () {
 #Search for llvm updates
 sudo apt-get install -y libllvm-12-ocaml-dev libllvm12 llvm-12 llvm-12-dev llvm-12-doc llvm-12-examples llvm-12-runtime clang-12 clang-tools-12 clang-12-doc libclang-common-12-dev libclang-12-dev libclang1-12 clang-format-12 clangd-12
@@ -134,8 +136,8 @@ fi
 #Select distro
 distro() {
 printf "\n"
-printf "\e[4mDistros\n\n\e[0m"
-printf "1) Debian (Deepin, Kali, Mint DE and more)\n2) Ubuntu (elementary OS, Mint, Pop_OS! and more)\n3) Go back\n\n"
+printf "\e[1;4mDistros\n\n\e[0m"
+printf "1) Debian (Deepin, Kali, Mint DE, etc.)\n2) Ubuntu (elementary OS, Mint, Pop\!_OS, etc.)\n3) Go back\n\n"
 read -p "Select an option: " distro
 if [ "$distro" = "1" ]; then
    debian
@@ -150,7 +152,7 @@ fi
 #Debian versions
 debian () {
 printf "\n"
-printf "\e[4mDebian Releases\n\n\e[0m"
+printf "\e[1;4mDebian Releases\n\n\e[0m"
 printf "1) Stretch (Debian 9)\n2) Buster %1s(Debian 10)\n3) Sid %4s(Unstable)\n4) Go back\n\n"
 read -p "Select an option: " debianver
 if [ "$debianver" = "1" ]; then
@@ -176,7 +178,7 @@ fi
 #Ubuntu versions
 ubuntu () {
 printf "\n"
-printf "\e[4mUbuntu Releases\n\n\e[0m"
+printf "\e[1;4mUbuntu Releases\n\n\e[0m"
 printf "1) Xenial (16.04)\n2) Bionic (18.04)\n3) Disco%2s(19.04)\n4) Eoan%3s(19.10)\n5) Focal%2s(20.04)\n6) Go back\n\n"  
 read -p "Select an option: " ubuntuver
 if [ "$ubuntuver" = "1" ]; then
