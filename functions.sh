@@ -60,11 +60,10 @@ meson configure build/
 ninja -C build/
 sudo ninja -C build/ install
 #Reboot or exit
-printf "\e[1;32mInstallation finished. Do you want to reboot?%1s[Y]/[N]\e[0m\n"
-read choice
-if [ "$choice" = "Y" ]; then
+read -p $'\e[1;32mInstallation finished. Do you want to reboot? [Y]/[N]: \e[0m' choice
+if [ "$choice" = "Y" ] ||  [ "$choice" = "y" ]; then
   rm -rf /tmp/mesa-llvm
-  reboot 
+  shutdown -r now
 else 
      rm -rf /tmp/mesa-llvm
      exit
@@ -122,11 +121,10 @@ meson configure build/
 ninja -C build/
 sudo ninja -C build/ install
 #Reboot or exit
-printf "\e[1;34mUpdate finished. Do you want to reboot?%1s[Y]/[N]\e[0m\n"
-read choice
-if [ "$choice" = "Y" ]; then
+read -p $'\e[1;34mUpdate finished. Do you want to reboot? [Y]/[N]: \e[0m' choice
+if [ "$choice" = "Y" ] ||  [ "$choice" = "y" ]; then
   rm -rf /tmp/mesa-llvm
-  reboot 
+  shutdown -r now
 else 
      rm -rf /tmp/mesa-llvm
      exit
@@ -208,4 +206,3 @@ elif [ "$ubuntuver" = "6" ]; then
     
 fi
 } 
-
