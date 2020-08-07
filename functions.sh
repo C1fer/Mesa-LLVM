@@ -4,7 +4,7 @@ mesa_install () {
 wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add -
 # Fingerprint: 6084 F3CF 814B 57C1 CF12 EFD5 15CF 4D18 AF4F 7421 
 sudo apt update
-sudo apt-get install -y mesa-utils meson build-essential git libvulkan-dev libvdpau-dev libxxf86vm-dev libxdamage-dev libxrandr-dev libzstd-dev libxext-dev libxshmfence-dev python python3-pip cmake libelf-dev libomxil-bellagio-dev libunwind-dev libglvnd-dev lm-sensors libclc-dev glslang-dev glslang-tools libva-dev vulkan-utils libpciaccess-dev wayland-protocols libwayland-egl-backend-dev libxcb-glx0-dev libx11-xcb-dev libxcb-dri2-0-dev libxcb-dri3-dev libxcb-present-dev libsensors-dev zstd  && sudo apt-get -y build-dep mesa
+sudo apt-get install -y mesa-utils meson build-essential git libvulkan-dev libvdpau-dev libxxf86vm-dev libxdamage-dev libxrandr-dev libzstd-dev libxext-dev libxshmfence-dev bison python python3-pip cmake libelf-dev libomxil-bellagio-dev libunwind-dev libglvnd-dev lm-sensors libclc-dev glslang-dev glslang-tools libva-dev vulkan-utils libpciaccess-dev wayland-protocols libwayland-egl-backend-dev libxcb-glx0-dev libx11-xcb-dev libxcb-dri2-0-dev libxcb-dri3-dev libxcb-present-dev libsensors-dev zstd  && sudo apt-get -y build-dep mesa
 #Build & install libdrm
 wget https://dri.freedesktop.org/libdrm/libdrm-2.4.102.tar.xz
 tar -xf libdrm-2.4.102.tar.xz && cd libdrm-2.4.102
