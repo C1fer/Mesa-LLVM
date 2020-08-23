@@ -16,8 +16,8 @@ sudo apt-get install -y libllvm-12-ocaml-dev libllvm12 llvm-12 llvm-12-dev llvm-
 cd /tmp/mesa-llvm
 git clone https://gitlab.freedesktop.org/mesa/mesa.git && cd mesa
 touch custom-llvm.ini
-echo "[binaries]" | sudo tee -a custom-llvm.ini
-echo "llvm-config = '/usr/bin/llvm-config-12'" | sudo tee -a custom-llvm.ini
+echo "[binaries]
+llvm-config = '/usr/bin/llvm-config-12'" | sudo tee custom-llvm.ini
 meson setup build \
        --native-file custom-llvm.ini \
        -D b_ndebug=false \
@@ -77,8 +77,8 @@ sudo apt-get install -y libllvm-12-ocaml-dev libllvm12 llvm-12 llvm-12-dev llvm-
 #Update mesa
 git clone https://gitlab.freedesktop.org/mesa/mesa.git && cd mesa
 touch custom-llvm.ini
-echo "[binaries]" | sudo tee -a custom-llvm.ini
-echo "llvm-config = '/usr/bin/llvm-config-12'" | sudo tee -a custom-llvm.ini
+echo "[binaries]
+llvm-config = '/usr/bin/llvm-config-12'" | sudo tee custom-llvm.ini
 meson setup build \
        --native-file custom-llvm.ini \
        -D b_ndebug=false \
