@@ -8,9 +8,9 @@ libxcb-shm0-dev && sudo apt-get -y build-dep mesa
 #Build & install libdrm
 wget https://dri.freedesktop.org/libdrm/libdrm-2.4.102.tar.xz
 tar -xf libdrm-2.4.102.tar.xz && cd libdrm-2.4.102
-meson build/ && cd build
-ninja && sudo ninja install
-#Install llvm
+meson build/ 
+ninja -C build/ install
+#Install llvm-git
 sudo apt-get install -y libllvm-12-ocaml-dev libllvm12 llvm-12 llvm-12-dev llvm-12-doc llvm-12-examples llvm-12-runtime clang-12 clang-tools-12 clang-12-doc libclang-common-12-dev libclang-12-dev libclang1-12 clang-format-12 clangd-12
 #Build & install mesa-git
 cd /tmp/mesa-llvm
