@@ -15,7 +15,6 @@ fi
 
 meson build/ 
 ninja -C build/ install
-
 #Build and install libgvlnd
 cd ..
 if [ -d "/tmp/mesa-llvm/libglvnd" ]; then
