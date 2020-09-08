@@ -172,16 +172,16 @@ printf "\e[1;4mDebian Releases\n\n\e[0m"
 printf "1) Stretch (Debian 9)\n2) Buster %1s(Debian 10)\n3) Sid %4s(Unstable)\n4) Go back\n\n"
 read -p "Select an option: " debianver
 if [ "$debianver" = "1" ]; then
-  echo "deb http://apt.llvm.org/stretch/ llvm-toolchain-stretch main" | sudo tee -a /etc/apt/sources.list
-  echo "deb-src http://apt.llvm.org/stretch/ llvm-toolchain-stretch main" | sudo tee -a /etc/apt/sources.list
+  echo "deb http://apt.llvm.org/stretch/ llvm-toolchain-stretch main
+  deb-src http://apt.llvm.org/stretch/ llvm-toolchain-stretch main" | sudo tee -a /etc/apt/sources.list >&-
   mesa_install
 elif [ "$debianver" = "2" ]; then
-  echo "deb http://apt.llvm.org/buster/ llvm-toolchain-buster main" | sudo tee -a /etc/apt/sources.list
-  echo "deb-src http://apt.llvm.org/buster/ llvm-toolchain-buster main" | sudo tee -a /etc/apt/sources.list
+  echo "deb http://apt.llvm.org/buster/ llvm-toolchain-buster main
+  deb-src http://apt.llvm.org/buster/ llvm-toolchain-buster main" | sudo tee -a /etc/apt/sources.list >&-
   mesa_install
 elif [ "$debianver" = "3" ]; then
-  echo "deb http://apt.llvm.org/unstable/ llvm-toolchain main" | sudo tee -a /etc/apt/sources.list
-  echo "deb-src http://apt.llvm.org/unstable/ llvm-toolchain main" | sudo tee -a /etc/apt/sources.list
+  echo "deb http://apt.llvm.org/unstable/ llvm-toolchain main
+  deb-src http://apt.llvm.org/unstable/ llvm-toolchain main" | sudo tee -a /etc/apt/sources.list >&-
   mesa_install
 elif [ "$debianver" = "4" ]; then
   clear
@@ -197,24 +197,24 @@ printf "\e[1;4mUbuntu Releases\n\n\e[0m"
 printf "1) Xenial (16.04)\n2) Bionic (18.04)\n3) Disco%2s(19.04)\n4) Eoan%3s(19.10)\n5) Focal%2s(20.04)\n6) Go back\n\n"  
 read -p "Select an option: " ubuntuver
 if [ "$ubuntuver" = "1" ]; then
-   echo "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial main" | sudo tee -a /etc/apt/sources.list
-   echo "deb-src http://apt.llvm.org/xenial/ llvm-toolchain-xenial main" | sudo tee -a /etc/apt/sources.list
+   echo "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial main
+   deb-src http://apt.llvm.org/xenial/ llvm-toolchain-xenial main" | sudo tee -a /etc/apt/sources.list >&-
    mesa_install
 elif [ "$ubuntuver" = "2" ]; then
-    echo "deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic main" | sudo tee -a /etc/apt/sources.list
-    echo "deb-src http://apt.llvm.org/bionic/ llvm-toolchain-bionic main" | sudo tee -a /etc/apt/sources.list
+    echo "deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic main
+    deb-src http://apt.llvm.org/bionic/ llvm-toolchain-bionic main" | sudo tee -a /etc/apt/sources.list >&-
     mesa_install
 elif [ "$ubuntuver" = "3" ]; then    
-    echo "deb http://apt.llvm.org/disco/ llvm-toolchain-disco main" | sudo tee -a /etc/apt/sources.list
-    echo "deb-src http://apt.llvm.org/disco/ llvm-toolchain-disco main" | sudo tee -a /etc/apt/sources.list
+    echo "deb http://apt.llvm.org/disco/ llvm-toolchain-disco main
+    deb-src http://apt.llvm.org/disco/ llvm-toolchain-disco main" | sudo tee -a /etc/apt/sources.list >&-
     mesa_install
 elif [ "$ubuntuver" = "4" ]; then    
-    echo "deb http://apt.llvm.org/eoan/ llvm-toolchain-eoan main" | sudo tee -a /etc/apt/sources.list
-    echo "deb-src http://apt.llvm.org/eoan/ llvm-toolchain-eoan main" | sudo tee -a /etc/apt/sources.list
+    echo "deb http://apt.llvm.org/eoan/ llvm-toolchain-eoan main
+    deb-src http://apt.llvm.org/eoan/ llvm-toolchain-eoan main" | sudo tee -a /etc/apt/sources.list >&-
     mesa_install
 elif [ "$ubuntuver" = "5" ]; then    
-    echo "deb http://apt.llvm.org/focal/ llvm-toolchain-focal main" | sudo tee -a /etc/apt/sources.list
-    echo "deb-src http://apt.llvm.org/focal/ llvm-toolchain-focal main" | sudo tee -a /etc/apt/sources.list
+    echo "deb http://apt.llvm.org/focal/ llvm-toolchain-focal main
+    deb-src http://apt.llvm.org/focal/ llvm-toolchain-focal main" | sudo tee -a /etc/apt/sources.list >&-
     mesa_install   
 elif [ "$ubuntuver" = "6" ]; then
      clear
