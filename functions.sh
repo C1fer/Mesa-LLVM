@@ -5,7 +5,7 @@ wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add -
 sudo apt update -y
 sudo apt-get install -y mesa-utils meson build-essential git libvulkan-dev libvdpau-dev libxxf86vm-dev libxdamage-dev libxrandr-dev libzstd-dev libxext-dev libxshmfence-dev bison python python3-pip cmake libelf-dev libomxil-bellagio-dev libunwind-dev libglvnd-dev lm-sensors libclc-dev glslang-dev glslang-tools libva-dev vulkan-utils libpciaccess-dev wayland-protocols libwayland-egl-backend-dev libxcb-glx0-dev libx11-xcb-dev libxcb-dri2-0-dev libxcb-dri3-dev libxcb-present-dev libsensors-dev zstd flex libxcb-shm0-dev && sudo apt-get -y sudo apt-get install -y libllvm12 llvm-12 llvm-12-dev llvm-12-doc clang-12 
 #Build & install libdrm
-if [ grep -d "/tmp/mesa-llvm/drm" ]; then
+if [ -d "/tmp/mesa-llvm/drm" ]; then
   cd drm 
   :
 else  
@@ -18,7 +18,7 @@ ninja -C build/ install
 
 #Build and install libgvlnd
 cd ..
-if [ grep -d "/tmp/mesa-llvm/libglvnd" ]; then
+if [ -d "/tmp/mesa-llvm/libglvnd" ]; then
   cd libglvnd
   :
 else 
@@ -32,7 +32,7 @@ ninja -C build/ install
 
 #Build & install mesa-git
 cd ..
-if [ grep -d "/tmp/mesa-llvm/mesa" ]; then
+if [ -d "/tmp/mesa-llvm/mesa" ]; then
   cd mesa
   :
 else 
@@ -254,7 +254,4 @@ else
  :
 fi
 }
-
-
-
 
