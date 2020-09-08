@@ -2,7 +2,7 @@
 #Full mesa installation
 mesa_install () {
 wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add -
-sudo apt update
+sudo apt update -y
 sudo apt-get install -y mesa-utils meson build-essential git libvulkan-dev libvdpau-dev libxxf86vm-dev libxdamage-dev libxrandr-dev libzstd-dev libxext-dev libxshmfence-dev bison python python3-pip cmake libelf-dev libomxil-bellagio-dev libunwind-dev libglvnd-dev lm-sensors libclc-dev glslang-dev glslang-tools libva-dev vulkan-utils libpciaccess-dev wayland-protocols libwayland-egl-backend-dev libxcb-glx0-dev libx11-xcb-dev libxcb-dri2-0-dev libxcb-dri3-dev libxcb-present-dev libsensors-dev zstd flex
 libxcb-shm0-dev && sudo apt-get -y build-dep mesa
 #Build & install libdrm
@@ -80,7 +80,7 @@ fi
 #Mesa + llvm update
 mesa_update () {
 #Search for llvm updates
-sudo apt-get install -y libllvm-12-ocaml-dev libllvm12 llvm-12 llvm-12-dev llvm-12-doc llvm-12-examples llvm-12-runtime clang-12 clang-tools-12 clang-12-doc libclang-common-12-dev libclang-12-dev libclang1-12 clang-format-12 clangd-12
+sudo apt update -y
 #Update mesa
 git clone https://gitlab.freedesktop.org/mesa/mesa.git && cd mesa
 touch custom-llvm.ini
