@@ -3,17 +3,20 @@
 mesa_install () {
 wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add -
 sudo apt update -y
-sudo apt-get install -y mesa-utils meson build-essential git libvulkan-dev libvdpau-dev libxxf86vm-dev libxdamage-dev libxrandr-dev libzstd-dev libxext-dev libxshmfence-dev bison python python3-pip cmake libelf-dev libomxil-bellagio-dev libunwind-dev libglvnd-dev lm-sensors libclc-dev glslang-dev glslang-tools libva-dev vulkan-utils libpciaccess-dev wayland-protocols libwayland-egl-backend-dev libxcb-glx0-dev libx11-xcb-dev libxcb-dri2-0-dev libxcb-dri3-dev libxcb-present-dev libsensors-dev zstd flex
-libxcb-shm0-dev && sudo apt-get -y build-dep mesa
+sudo apt-get install -y mesa-utils meson build-essential git libvulkan-dev libvdpau-dev libxxf86vm-dev libxdamage-dev libxrandr-dev libzstd-dev libxext-dev libxshmfence-dev bison python python3-pip cmake libelf-dev libomxil-bellagio-dev libunwind-dev libglvnd-dev lm-sensors libclc-dev glslang-dev glslang-tools libva-dev vulkan-utils libpciaccess-dev wayland-protocols libwayland-egl-backend-dev libxcb-glx0-dev libx11-xcb-dev libxcb-dri2-0-dev libxcb-dri3-dev libxcb-present-dev libsensors-dev zstd flex libxcb-shm0-dev && sudo apt-get -y sudo apt-get install -y libllvm-12-ocaml-dev libllvm12 llvm-12 llvm-12-dev llvm-12-doc llvm-12-examples llvm-12-runtime clang-12 clang-tools-12 clang-12-doc libclang-common-12-dev libclang-12-dev libclang1-12 clang-format-12 clangd-12
 #Build & install libdrm
-wget https://dri.freedesktop.org/libdrm/libdrm-2.4.102.tar.xz
-tar -xf libdrm-2.4.102.tar.xz && cd libdrm-2.4.102
+git clone https://gitlab.freedesktop.org/mesa/drm.git && cd drm
 meson build/ 
 ninja -C build/ install
+#Build and install libgvlnd
+cd ..
+git clone https://github.com/NVIDIA/libglvnd.git && cd libglvnd
+meson build/
+ninja -C build/ install
 #Install llvm-git
-sudo apt-get install -y libllvm-12-ocaml-dev libllvm12 llvm-12 llvm-12-dev llvm-12-doc llvm-12-examples llvm-12-runtime clang-12 clang-tools-12 clang-12-doc libclang-common-12-dev libclang-12-dev libclang1-12 clang-format-12 clangd-12
+
 #Build & install mesa-git
-cd /tmp/mesa-llvm
+cd ..
 git clone https://gitlab.freedesktop.org/mesa/mesa.git && cd mesa
 touch custom-llvm.ini
 echo "[binaries]
