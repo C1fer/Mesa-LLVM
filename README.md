@@ -13,6 +13,6 @@ I recommend using `sh <(curl -s https://raw.githubusercontent.com/C1fer/Mesa-LLV
 You can use ccache to make the compilation go much faster. In order to set up ccache, type these commands on a teminal window and then log out.
 ```
 sudo apt install -y ccache
-echo 'export PATH="/usr/lib/ccache:$PATH"' | sudo tee -a ~/.bashrc
+echo 'export PATH="/usr/lib/ccache:$PATH"' | sudo tee -a ~/.bashrc (or ~/.zshrc if you use zsh)
 sudo /usr/sbin/update-ccache-symlinks
 ```
