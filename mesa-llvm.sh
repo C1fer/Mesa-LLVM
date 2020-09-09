@@ -6,7 +6,7 @@ else
   mkdir /tmp/mesa-llvm && cd /tmp/mesa-llvm
   wget -q https://raw.githubusercontent.com/Cifer025/Mesa-LLVM/master/functions.sh
 fi
-source ./functions.sh
+. ./functions.sh
 #Start screen
 home () {
 printf "\nA very simple mesa-git and llvm-git installer\n\n"
