@@ -12,7 +12,6 @@ else
   git clone https://gitlab.freedesktop.org/mesa/drm.git && cd drm
   :
 fi
-
 meson build/ 
 sudo ninja -C build/ install
 #Build and install libgvlnd
@@ -24,7 +23,6 @@ else
   git clone https://github.com/NVIDIA/libglvnd.git && cd libglvnd
   :
 fi
-
 meson build/
 sudo ninja -C build/ install
 #Install llvm-git
@@ -38,7 +36,6 @@ else
   git clone https://gitlab.freedesktop.org/mesa/mesa.git && cd mesa
   :
 fi
-
 touch custom-llvm.ini
 echo "[binaries]
 llvm-config = '/usr/bin/llvm-config-12'" | sudo tee custom-llvm.ini
@@ -88,7 +85,6 @@ if [ $? -ne 0 ]; then
 else
   :
 fi  
-
 sudo ninja -C build/ install
 #Reboot or exit
 read -p $'\e[1;32mInstallation finished. Do you want to reboot? [Y]/[N]: \e[0m' choice
@@ -156,7 +152,6 @@ if [ $? -ne 0 ]; then
 else
   :
 fi  
-
 sudo ninja -C build/ install
 #Reboot or exit
 read -p $'\e[1;34mUpdate finished. Do you want to reboot? [Y]/[N]: \e[0m' choice
