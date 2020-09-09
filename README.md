@@ -7,7 +7,7 @@ DON'T a PPA (Oibaf, Kisak, Padoka, etc.) nor update from Update Manager if you w
 # Usage
 In order for the script to work, you need to enable source code repositories and unstable packages on your distro's software sources manager. Note that if you've added a ppa before these options should be enabled. 
 
-I recommend using `bash <(curl -s https://raw.githubusercontent.com/C1fer/Mesa-LLVM/master/mesa-llvm.sh)` for running the script. With that you will always use the latest version, but you can download it and run it using `./mesa-llvm.sh` if you want.
+I recommend using `sh <(curl -s https://raw.githubusercontent.com/C1fer/Mesa-LLVM/master/mesa-llvm.sh)` for running the script. With that you will always use the latest version, but you can download it and run it using `./mesa-llvm.sh` if you want.
 
 # Speed up compilation
 You can use ccache to make the compilation go much faster. In order to set up ccache, type these commands on a teminal window and then log out.
