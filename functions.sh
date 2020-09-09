@@ -80,7 +80,7 @@ meson setup build \
 meson configure build/
 ninja -C build/
 if [ $? -ne 0 ]; then 
-  print '\e[1;32mCompilation failed. Exiting...'
+  printf '\e[1;32mCompilation failed. Exiting...'
   exit
 else
   :
@@ -147,7 +147,7 @@ meson setup build \
 meson configure build/
 ninja -C build/
 if [ $? -ne 0 ]; then 
-  print '\e[1;32mCompilation failed. Exiting...'
+  printf '\e[1;32mCompilation failed. Exiting...'
   exit
 else
   :
