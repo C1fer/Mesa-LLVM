@@ -38,7 +38,7 @@ else
 fi
 touch custom-llvm.ini
 echo "[binaries]
-llvm-config = '/usr/bin/llvm-config-12'" | sudo tee custom-llvm.ini
+llvm-config = '/usr/bin/llvm-config-12'" | tee custom-llvm.ini >&-
 meson setup build \
        --native-file custom-llvm.ini \
        -D b_ndebug=false \
@@ -105,7 +105,7 @@ sudo apt update -y
 git clone https://gitlab.freedesktop.org/mesa/mesa.git && cd mesa
 touch custom-llvm.ini
 echo "[binaries]
-llvm-config = '/usr/bin/llvm-config-12'" | sudo tee custom-llvm.ini
+llvm-config = '/usr/bin/llvm-config-12'" | tee custom-llvm.ini
 meson setup build \
        --native-file custom-llvm.ini \
        -D b_ndebug=false \
@@ -167,7 +167,7 @@ fi
 #Select distro
 distro() {
 printf "\n"
-printf "A very simple mesa + llvm installer\n\n"
+printf "A very simple mesa-git and llvm-git installer\n\n"
 printf "\e[1;4mDistros\n\n\e[0m"
 printf "1) Debian (Deepin, Kali, Mint DE, etc.)\n2) Ubuntu (elementary OS, Mint, Pop!_OS, etc.)\n3) Go back\n\n"
 read -p "Select an option: " distro
