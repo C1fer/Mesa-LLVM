@@ -14,7 +14,7 @@ else
 fi
 
 meson build/ 
-ninja -C build/ install
+sudo ninja -C build/ install
 #Build and install libgvlnd
 cd ..
 if [ -d "/tmp/mesa-llvm/libglvnd" ]; then
@@ -26,7 +26,7 @@ else
 fi
 
 meson build/
-ninja -C build/ install
+sudo ninja -C build/ install
 #Install llvm-git
 
 #Build & install mesa-git
