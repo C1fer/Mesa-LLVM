@@ -3,7 +3,7 @@
 mesa_install () {
 wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add -
 sudo apt update -y
-sudo apt install -y mesa-utils meson build-essential git libvulkan-dev libvdpau-dev libxxf86vm-dev libxdamage-dev libxrandr-dev libzstd-dev libxext-dev libxshmfence-dev bison python python3-pip cmake libelf-dev libomxil-bellagio-dev libunwind-dev libglvnd-dev lm-sensors libclc-dev glslang-dev glslang-tools libva-dev vulkan-utils libpciaccess-dev wayland-protocols libwayland-egl-backend-dev libxcb-glx0-dev libx11-xcb-dev libxcb-dri2-0-dev libxcb-dri3-dev libxcb-present-dev libsensors-dev zstd flex libxcb-shm0-dev llvm-12 libllvm12 clang-12 libclang-12-dev
+sudo apt install -y mesa-utils meson build-essential git libvulkan-dev libvdpau-dev libxxf86vm-dev libxdamage-dev libxrandr-dev libzstd-dev libxext-dev libxshmfence-dev bison python python3-pip cmake libelf-dev libomxil-bellagio-dev libunwind-dev libglvnd-dev lm-sensors libclc-dev glslang-dev glslang-tools libva-dev vulkan-utils libpciaccess-dev wayland-protocols libwayland-egl-backend-dev libxcb-glx0-dev libx11-xcb-dev libxcb-dri2-0-dev libxcb-dri3-dev libxcb-present-dev libsensors-dev zstd flex libxcb-shm0-dev llvm-12 libllvm12 clang-12 libclang-12-dev && pip3 install mako
 #Build & install libdrm
 if [ -d "/tmp/mesa-llvm/drm" ]; then
   cd drm 
