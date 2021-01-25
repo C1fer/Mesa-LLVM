@@ -210,31 +210,29 @@ fi
 
 #Ubuntu versions
 ubuntu () {
-printf "\n"
-printf "\e[1;4mUbuntu Releases\n\n\e[0m"
-printf "1) Xenial%2s(16.04)\n2) Bionic%2s(18.04)\n3) Focal%3s(20.04)\n4) Groovy%2s(20.10)\n5) Hirsute%1s(21.04) \n6) Go back\n\n"  
-read -p "Select an option: " ubuntuver
-if [ "$ubuntuver" = "1" ]; then
+ubuntuver=$(grep 'UBUNTU_CODENAME' /etc/os-release | sed 's/.*=//')
+if [ "$ubuntuver" = "xenial" ]; then
    echo "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial main
    deb-src http://apt.llvm.org/xenial/ llvm-toolchain-xenial main" | sudo tee -a /etc/apt/sources.list >&-
    mesa_install
-elif [ "$ubuntuver" = "2" ]; then
+elif [ "$ubuntuver" = "bionic" ]; then
     echo "deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic main
     deb-src http://apt.llvm.org/bionic/ llvm-toolchain-bionic main" | sudo tee -a /etc/apt/sources.list >&-
     mesa_install
-elif [ "$ubuntuver" = "3" ]; then    
+elif [ "$ubuntuver" = "focal" ]; then    
     echo "deb http://apt.llvm.org/focal/ llvm-toolchain-focal main
     deb-src http://apt.llvm.org/focal/ llvm-toolchain-focal main" | sudo tee -a /etc/apt/sources.list >&-
     mesa_install
-elif [ "$ubuntuver" = "4" ]; then    
+elif [ "$ubuntuver" = "groovy" ]; then    
     echo "deb http://apt.llvm.org/groovy/ llvm-toolchain-groovy main
     deb-src http://apt.llvm.org/groovy/ llvm-toolchain-groovy main" | sudo tee -a /etc/apt/sources.list >&-
     mesa_install
-elif [ "$ubuntuver" = "5" ]; then    
+elif [ "$ubuntuver" = "hirsute" ]; then    
     echo "deb http://apt.llvm.org/hirsute/ llvm-toolchain-hirsute main
     deb-src http://apt.llvm.org/hirsute/ llvm-toolchain-hirsute main" | sudo tee -a /etc/apt/sources.list >&-
     mesa_install   
-elif [ "$ubuntuver" = "6" ]; then
+else
+     printf '$ubuntuver is not a compatible Ubuntu release.'
      clear
      distro
     
