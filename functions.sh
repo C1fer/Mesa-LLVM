@@ -41,16 +41,16 @@ echo "[binaries]
 llvm-config = '/usr/bin/llvm-config-12'" | tee custom-llvm.ini >&-
 meson setup build \
        --native-file custom-llvm.ini \
-       -D b_ndebug=false \
+       -D b_ndebug=true \
        -D b_lto=true \
        -D buildtype=plain \
        --wrap-mode=nofallback \
        -D prefix=/usr \
        -D sysconfdir=/etc \
-       -D platforms=x11,wayland,drm \
+       -D platforms=x11,wayland \
        -D dri-drivers=i915,i965,r200,r100,nouveau \
        -D gallium-drivers=r300,r600,radeonsi,nouveau,svga,swrast,virgl,iris,zink \
-       -D vulkan-drivers=amd,intel \
+       -D vulkan-drivers=amd,intel,swrast \
        -D dri3=enabled \
        -D egl=enabled \
        -D gallium-extra-hud=true \
@@ -68,7 +68,7 @@ meson setup build \
        -D libunwind=enabled \
        -D llvm=enabled \
        -D lmsensors=enabled \
-       -D osmesa=gallium \
+       -D osmesa=true \
        -D shared-glapi=enabled \
        -D gallium-opencl=icd \
        -D valgrind=disabled \
@@ -76,6 +76,7 @@ meson setup build \
        -D vulkan-device-select-layer=true \
        -D tools=[] \
        -D zstd=enabled \
+       -D microsoft-clc=disabled
        
 meson configure build/
 ninja -C build/
@@ -108,16 +109,16 @@ echo "[binaries]
 llvm-config = '/usr/bin/llvm-config-12'" | tee custom-llvm.ini
 meson setup build \
        --native-file custom-llvm.ini \
-       -D b_ndebug=false \
+       -D b_ndebug=true \
        -D b_lto=true \
        -D buildtype=plain \
        --wrap-mode=nofallback \
        -D prefix=/usr \
        -D sysconfdir=/etc \
-       -D platforms=x11,wayland,drm,surfaceless \
+       -D platforms=x11,wayland \
        -D dri-drivers=i915,i965,r200,r100,nouveau \
        -D gallium-drivers=r300,r600,radeonsi,nouveau,svga,swrast,virgl,iris,zink \
-       -D vulkan-drivers=amd,intel \
+       -D vulkan-drivers=amd,intel,swrast \
        -D dri3=enabled \
        -D egl=enabled \
        -D gallium-extra-hud=true \
@@ -135,7 +136,7 @@ meson setup build \
        -D libunwind=enabled \
        -D llvm=enabled \
        -D lmsensors=enabled \
-       -D osmesa=gallium \
+       -D osmesa=true \
        -D shared-glapi=enabled \
        -D gallium-opencl=icd \
        -D valgrind=disabled \
@@ -143,6 +144,7 @@ meson setup build \
        -D vulkan-device-select-layer=true \
        -D tools=[] \
        -D zstd=enabled \
+       -D microsoft-clc=disabled
        
 meson configure build/
 ninja -C build/
