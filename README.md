@@ -2,7 +2,7 @@
 Script for installing Mesa-git and LLVM-git on Ubuntu and Debian based distros.
 
 # ATTENTION
-DON'T a PPA (Oibaf, Kisak, Padoka, etc.) nor update from Update Manager if you want to use this script. Updating from another source aside from this will roll you back to llvm-stable.
+DON'T use a PPA (Oibaf, Kisak, Padoka, etc.) nor update from Update Manager if you want to use this script. Updating from another source aside from this will roll you back to llvm-stable.
 
 # Usage
 In order for the script to work, you need to enable source code repositories and unstable packages on your distro's software sources manager. Note that if you've added a ppa before these options should be enabled. 
