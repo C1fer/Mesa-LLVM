@@ -20,7 +20,6 @@ if [ "$choice" = 1 ]; then
 elif [ "$choice" = "2" ]; then
    mesa_update
 elif [ "$choice" = "3" ]; then
-   rm -rf /tmp/mesa-llvm
    printf "Exiting...\n"
    exit
 fi   
